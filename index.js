@@ -1,12 +1,14 @@
 document.querySelector("#userInput").addEventListener("submit", (e) => {
   e.preventDefault();
-
   const pass = document.querySelector("#basePass").value;
   const serviceName = document.querySelector("#service").value;
   const resultDiv = document.querySelector("#result");
 
+  resultDiv.innerHTML = null;
   resultDiv.textContent =
     "Generated password: " + generatePass(pass, serviceName);
+
+  e.target.reset();
 });
 
 function generatePass(basepass, service) {
